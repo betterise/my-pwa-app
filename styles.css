@@ -17,22 +17,35 @@ p {
 button {
   padding: 10px 20px;
   font-size: 16px;
-  margin: 10px auto;
+  margin: 10px;
   cursor: pointer;
 }
 
-#navigation-bar {
+/* 導航欄樣式 */
+nav {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  background-color: #333;
+  padding: 10px;
   position: fixed;
-  background-color: #fff;
+  width: 100%;
+  z-index: 1000;
 }
 
-body.mobile #navigation-bar {
-  bottom: 0;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-body.desktop #navigation-bar {
+/* 頂部導航欄 */
+#top-nav {
   top: 0;
+  left: 0;
+}
+
+/* 底部導航欄 */
+#bottom-nav {
+  bottom: 0;
+  left: 0;
 }
