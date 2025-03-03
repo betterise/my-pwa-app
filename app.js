@@ -12,6 +12,11 @@ function detectDevice() {
     return 'Android';
   }
 
+  // 檢測是否為 Windows 或 macOS 設備
+  if (/Win|Mac/i.test(userAgent)) {
+    return 'Desktop';
+  }
+
   // 其他設備
   return 'Other';
 }
@@ -20,12 +25,15 @@ function detectDevice() {
 const device = detectDevice();
 const iosButton = document.getElementById('ios-button');
 const androidButton = document.getElementById('android-button');
+const desktopButton = document.getElementById('desktop-button');
 const unsupportedDevice = document.getElementById('unsupported-device');
 
 if (device === 'iOS') {
   iosButton.style.display = 'block';
 } else if (device === 'Android') {
   androidButton.style.display = 'block';
+} else if (device === 'Desktop') {
+  desktopButton.style.display = 'block';
 } else {
   unsupportedDevice.style.display = 'block';
 }
@@ -53,4 +61,9 @@ window.addEventListener('beforeinstallprompt', (event) => {
       deferredPrompt = null;
     });
   });
+});
+
+// 桌面按鈕點擊事件
+desktopButton.addEventListener('click', () => {
+  alert('請使用瀏覽器的「添加到主屏幕」或「安裝應用程式」功能來安裝此應用程式。');
 });
