@@ -9,10 +9,18 @@
 </head>
 <body>
 
-  <nav id="navigation-bar">
-    <button>Home</button>
-    <button>Profile</button>
-    <button>Settings</button>
+  <!-- 頂部導航欄（預設隱藏） -->
+  <nav id="top-nav" style="display: none;">
+    <a href="#home">首頁</a>
+    <a href="#about">關於</a>
+    <a href="#contact">聯絡我們</a>
+  </nav>
+  
+    <!-- 底部導航欄（預設隱藏） -->
+  <nav id="bottom-nav" style="display: none;">
+    <a href="#home">首頁</a>
+    <a href="#about">關於</a>
+    <a href="#contact">聯絡我們</a>
   </nav>
     
   <h1>歡迎使用我的 PWA 應用程式！</h1>
@@ -38,11 +46,6 @@
           console.log('Service Worker 註冊失敗：', error);
         });
     }
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    document.body.classList.add('mobile');
-  } else {
-    document.body.classList.add('desktop');
-  }
   </script>
 </body>
 </html>
