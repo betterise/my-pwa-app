@@ -21,13 +21,27 @@ function detectDevice() {
   return 'Other';
 }
 
-// 根據設備顯示下載按鈕
+// 根據設備顯示下載按鈕和導航欄
 const device = detectDevice();
 const iosButton = document.getElementById('ios-button');
 const androidButton = document.getElementById('android-button');
 const desktopButton = document.getElementById('desktop-button');
 const unsupportedDevice = document.getElementById('unsupported-device');
+const topNav = document.getElementById('top-nav');
+const bottomNav = document.getElementById('bottom-nav');
 
+if (device === 'iOS' || device === 'Android') {
+  // 移動設備：顯示底部導航欄
+  bottomNav.style.display = 'flex';
+} else if (device === 'Desktop') {
+  // 桌面設備：顯示頂部導航欄
+  topNav.style.display = 'flex';
+} else {
+  // 其他設備：不顯示導航欄
+  unsupportedDevice.style.display = 'block';
+}
+
+// 根據設備顯示下載按鈕
 if (device === 'iOS') {
   iosButton.style.display = 'block';
 } else if (device === 'Android') {
