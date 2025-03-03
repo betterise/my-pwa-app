@@ -38,6 +38,11 @@
           console.log('Service Worker 註冊失敗：', error);
         });
     }
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.body.classList.add('mobile');
+  } else {
+    document.body.classList.add('desktop');
+  }
   </script>
 </body>
 </html>
