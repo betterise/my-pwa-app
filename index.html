@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的 PWA 應用程式</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>歡迎使用我的 PWA 應用程式！</h1>
+  <p>這是一個可以在 iOS 和 Android 上安裝的網頁應用程式。</p>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(function(registration) {
+          console.log('Service Worker 註冊成功：', registration.scope);
+        })
+        .catch(function(error) {
+          console.log('Service Worker 註冊失敗：', error);
+        });
+    }
+  </script>
+</body>
+</html>
