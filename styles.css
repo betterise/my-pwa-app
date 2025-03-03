@@ -20,4 +20,7 @@ button {
   font-size: 16px;
   margin: 10px;
   cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
